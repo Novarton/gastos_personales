@@ -1,4 +1,3 @@
-// app/(auth)/index.tsx
 import { useEffect, useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -11,7 +10,7 @@ export default function IngresoPinScreen() {
 
   const validarPin = async () => {
     setLoading(true);
-    const pinGuardado = await SecureStore.getItemAsync('clave_pin') // ✅ Correcto
+    const pinGuardado = await SecureStore.getItemAsync('clave_pin') 
 
 
     if (pinGuardado === pin) {

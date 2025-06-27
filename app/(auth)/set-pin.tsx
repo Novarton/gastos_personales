@@ -1,4 +1,3 @@
-// app/(auth)/set-pin.tsx
 import { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
 import * as SecureStore from 'expo-secure-store';;
@@ -22,7 +21,7 @@ export default function EstablecerPinScreen() {
   }
 
   setLoading(true);
-  const existingPin = await SecureStore.getItemAsync('clave_pin');
+  const existingPin = await SecureStore.getItemAsync('clave_pin'); // Verificamos si ya existe un PIN guardado
 
   if (existingPin) {
     Alert.alert('Ya existe un PIN guardado. Por favor, elimínalo antes de establecer uno nuevo.');
@@ -30,7 +29,7 @@ export default function EstablecerPinScreen() {
     return;
   }
 
-  await SecureStore.setItemAsync('clave_pin', pin); // ✅ Aquí sí se guarda
+  await SecureStore.setItemAsync('clave_pin', pin); // Guardamos el PIN en SecureStore
 
   Alert.alert('PIN guardado correctamente');
   router.replace('/');
