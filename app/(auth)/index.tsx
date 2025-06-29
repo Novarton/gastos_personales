@@ -54,11 +54,9 @@ export default function Index() {
     );
   };
 
-  const renderKey = (value: string | number | JSX.Element, onPress: () => void) => (
+  const renderKey = (value: string, onPress: () => void) => (
     <TouchableOpacity onPress={onPress} style={styles.key}>
-      {typeof value === 'string' || typeof value === 'number' ? (
-        <Text style={styles.keyText}>{value}</Text>
-      ) : value}
+      <Text style={styles.keyText}>{value}</Text>
     </TouchableOpacity>
   );
 
