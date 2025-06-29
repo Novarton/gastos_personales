@@ -3,6 +3,11 @@ import { Stack, usePathname, useRouter } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
+import { initDatabase } from './db/database';
+
+useEffect(() => {
+  initDatabase();
+}, []);
 
 export default function RootLayout() {
   const router = useRouter();
